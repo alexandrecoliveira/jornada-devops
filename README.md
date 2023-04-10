@@ -2,4 +2,4 @@
 
 ### Desafio-01
 
-[Link](./desafio-01/README.md)
+[Link](./desafio-01)
