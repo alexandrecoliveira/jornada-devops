@@ -1,4 +1,4 @@
-FROM node:19.8.1-alpine3.16
+FROM node:19-alpine3.16
 
 WORKDIR /api
 COPY conversao-temperatura/src/package*.json ./
