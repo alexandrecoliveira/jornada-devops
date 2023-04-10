@@ -2,12 +2,12 @@
 
 ## Geração da imagem
 
-### Tags latest
+### TAG latest
 ```bash
 docker build -t coliveiraa/desafio-01/conversao-temperatura:latest .
 ```
 
-### Tag incrementais
+### TAGs incrementais
 ```bash
 docker build -t coliveiraa/desafio-01/conversao-temperatura:0.0.1 .
 ```
