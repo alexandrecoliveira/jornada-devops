@@ -16,15 +16,15 @@ terraform init
 terraform plan
 ```
 
-### Criação dos recursos
+### Criação
 
-Digite `yes` após a inserção do comando para confirmar o comando:
+Digite `yes` após a inserção do comando para confirmar a criação dos recursos:
 
 ```bash
 terraform apply
 ```
 
-:warning: `terraform apply -auto-approve` realiza a criação dos recursos sem a necessidade de confirmação
+- OBS: `terraform apply -auto-approve` realiza a criação dos recursos sem a necessidade de confirmação
 
 
 ### Limpeza do ambiente
