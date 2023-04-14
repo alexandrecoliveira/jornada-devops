@@ -28,8 +28,8 @@ pipeline {
             }            
             steps {
                 withKubeConfig([credentialsId: 'config-cluster-do']) {                    
-                    sh 'sed -i "s/{{TAG}}/$tag_version/g" desafio-04/deploy-conversao-temperatura.yaml'
-                    sh 'kubectl apply -f desafio-04/deploy-conversao-temperatura.yaml'
+                    sh 'sed -i "s/{{TAG}}/$tag_version/g" desafio-04/kubenews.yaml'
+                    sh 'kubectl apply -f desafio-04/kubenews.yaml'
                 }
             }
         }
