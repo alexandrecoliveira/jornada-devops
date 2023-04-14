@@ -13,10 +13,12 @@ pipeline {
 
         stage ('Push Kube-News Image do DockerHub') {
             steps {
-                docker.withRegistry('https://registry.hub.docker.com', 'usr_pwd_docker_hub') {
-                    dockerapp.push('latest')
-                    dockerapp.push("${env.BUILD_ID}")
-                }
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', 'usr_pwd_docker_hub') {
+                        dockerapp.push('latest')
+                        dockerapp.push("${env.BUILD_ID}")
+                    }
+                }                
             }
         }
 
