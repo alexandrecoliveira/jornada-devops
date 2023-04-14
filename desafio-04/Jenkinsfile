@@ -22,5 +22,17 @@ pipeline {
             }
         }
 
+        stage ('Deploy do Kube-News no K8S') {
+            environment {
+                tag_version = "RC-${env.BUILD_ID}"
+            }            
+            steps {
+                withKubeConfig([credentialsID: 'config-cluster-do']) {                    
+                    sh 'sed -i "s/{{TAG}}/$tag_version/g" desafio-04/deploy-conversao-temperatura.yaml'
+                    sh 'kubectl apply -f desafio-04/deploy-conversao-temperatura.yaml'
+                }
+            }
+        }
+
     }
 }
