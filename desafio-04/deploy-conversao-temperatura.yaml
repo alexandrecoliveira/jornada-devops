@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: conversao-temp
-          image: coliveiraa/desafio-01-conversao-temperatura:{{TAG}}
+          image: coliveiraa/desafio-04-kubenews:{{TAG}}
           ports:
             - containerPort: 8080
 ---
