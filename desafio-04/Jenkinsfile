@@ -6,7 +6,7 @@ pipeline {
         stage ('Build Docker Image') {
             steps {
                 script {
-                    dockerapp = docker.build("coliveiraa/desafio-04-kubenews:${env.BUILD_ID}", '-f desafio-04/Dockerfile desafio-04/kube-news/src')
+                    dockerapp = docker.build("coliveiraa/desafio-04-kubenews:RC-${env.BUILD_ID}", '-f desafio-04/Dockerfile desafio-04/kube-news/src')
                 }
             }            
         }
@@ -16,7 +16,7 @@ pipeline {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'usr_pwd_docker_hub') {
                         dockerapp.push('latest')
-                        dockerapp.push("${env.BUILD_ID}")
+                        dockerapp.push("RC-${env.BUILD_ID}")
                     }
                 }                
             }
